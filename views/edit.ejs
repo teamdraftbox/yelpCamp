@@ -1,0 +1,34 @@
+<% include partials/header%>
+
+
+<div class="container" style="position:absolute;
+                              margin-top:100px;
+                              margin-left:450px;">
+   
+<form action = "/campsite/<%=camp._id%>?_method=put" method = "post">
+    
+       <div style ="width:350px;padding-left:10px;">
+          <h2>Edit:  <%=camp.site%></h2>
+           <div class = "form-group">
+        <label>SiteName</label>
+       <input type="text" name="campsite[site]" class = "form-control" value="<%=camp.site%>" >
+       </div>
+       <div class = "form-group">
+        <label>url</label>
+       <input type="text" name="campsite[url]" class = "form-control" value="<%=camp.image%>">
+       </div>
+       <div class = "form-group">
+        <label>Price</label>
+       <input type="number" name="price" class = "form-control" value="<%= camp.price%>$">
+       </div>
+        <div class = "form-group">
+        <label>discription</label>
+       <input type="text" name="campsite[discription]" class = "form-control" value="<%=camp.discription%>">
+       </div>
+       <button class = "btn btn-info btn-lg btn-block">submit</button>
+       </div>
+       <a href = "/campsite">Go Back</a>
+    </form>
+</div>
+
+<% include partials/footer%>
