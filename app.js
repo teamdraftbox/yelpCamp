@@ -38,8 +38,8 @@ app.use(passport.session())
 passport.use(new passportlocal(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
+mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/yelpCamp")
 
-mongoose.connect("mongodb://teamdraftbox:700077VISHNU@ds125342.mlab.com:25342/camping_site")
 app.use(function(req, res, next){
    res.locals.currentUser = req.user;
    res.locals.error=req.flash("error");
